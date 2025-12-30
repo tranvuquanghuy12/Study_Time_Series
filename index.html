@@ -74,12 +74,12 @@
 <body class="tex2jax_process">
     <article class="tex2jax_process">
 <section class="tex2jax_ignore mathjax_ignore tex2jax_process display" id="chuong-1-trung-binh-truot-tich-hop-tu-hoi-quy-arima">
-<h1 id="chuong-1-trung-binh-truot-tich-hop-tu-hoi-quy-arim-0">Chương 1: Trung bình trượt tích hợp tự hồi quy (ARIMA)</h1>
+<h1 id="chuong-1-trung-binh-truot-tich-hop-tu-hoi-quy-arim-0">Buổi 1: Trung bình trượt tích hợp tự hồi quy (ARIMA)</h1>
 
     <nav class="toc">
         <div class="toc-title">Mục lục</div>
         <ul>
-            <li class="toc-level-1"><a href="#chuong-1-trung-binh-truot-tich-hop-tu-hoi-quy-arim-0">Chương 1: Trung bình trượt tích hợp tự hồi quy (ARIMA)</a></li><li class="toc-level-2"><a href="#gioi-thieu-ve-arima-1">Giới thiệu về ARIMA</a></li><li class="toc-level-3"><a href="#vi-du-1-chuoi-thoi-gian-don-bien-dung-va-khong-dun-2">Ví dụ 1: Chuỗi thời gian đơn biến dừng và không dừng</a></li><li class="toc-level-3"><a href="#thanh-phan-mo-hinh-3">Thành phần mô hình</a></li><li class="toc-level-2"><a href="#cac-tham-so-mo-hinh-p-d-and-q-va-cac-truong-hop-da-4">Các tham số mô hình p, d, and q và các trường hợp đặc biệt</a></li><li class="toc-level-3"><a href="#xac-dinh-p-d-va-q-5">Xác định p, d, và q</a></li><li class="toc-level-2"><a href="#xay-dung-mo-hinh-arima-6">Xây dựng mô hình ARIMA</a></li><li class="toc-level-2"><a href="#trien-khai-va-du-bao-bang-arima-7">Triển khai và Dự báo bằng ARIMA</a></li><li class="toc-level-3"><a href="#vi-du-2-du-bao-nhiet-do-trong-bo-du-lieu-khi-hau-j-8">Ví dụ 2: Dự báo nhiệt độ trong Bộ dữ liệu Khí hậu Jena</a></li><li class="toc-level-3"><a href="#vi-du-3-su-dung-arima-cho-chuoi-thoi-gian-da-bien--9">Ví dụ 3: Sử dụng ARIMA cho chuỗi thời gian đa biến (Multivariate Time Series)</a></li><li class="toc-level-2"><a href="#xem-truoc-chuong-tiep-theo-10">Xem trước chương tiếp theo</a></li><li class="toc-level-2"><a href="#tai-lieu-tham-khao-11">Tài liệu tham khảo</a></li>
+            <li class="toc-level-1"><a href="#chuong-1-trung-binh-truot-tich-hop-tu-hoi-quy-arim-0">Buổi 1: Trung bình trượt tích hợp tự hồi quy (ARIMA)</a></li><li class="toc-level-2"><a href="#gioi-thieu-ve-arima-1">Giới thiệu về ARIMA</a></li><li class="toc-level-3"><a href="#vi-du-1-chuoi-thoi-gian-don-bien-dung-va-khong-dun-2">Ví dụ 1: Chuỗi thời gian đơn biến dừng và không dừng</a></li><li class="toc-level-3"><a href="#thanh-phan-mo-hinh-3">Thành phần mô hình</a></li><li class="toc-level-2"><a href="#cac-tham-so-mo-hinh-p-d-and-q-va-cac-truong-hop-da-4">Các tham số mô hình p, d, and q và các trường hợp đặc biệt</a></li><li class="toc-level-3"><a href="#xac-dinh-p-d-va-q-5">Xác định p, d, và q</a></li><li class="toc-level-2"><a href="#xay-dung-mo-hinh-arima-6">Xây dựng mô hình ARIMA</a></li><li class="toc-level-2"><a href="#trien-khai-va-du-bao-bang-arima-7">Triển khai và Dự báo bằng ARIMA</a></li><li class="toc-level-3"><a href="#vi-du-2-du-bao-nhiet-do-trong-bo-du-lieu-khi-hau-j-8">Ví dụ 2: Dự báo nhiệt độ trong Bộ dữ liệu Khí hậu Jena</a></li><li class="toc-level-3"><a href="#vi-du-3-su-dung-arima-cho-chuoi-thoi-gian-da-bien--9">Ví dụ 3: Sử dụng ARIMA cho chuỗi thời gian đa biến (Multivariate Time Series)</a></li>   
         </ul>
     </nav>
 <p>Biên soạn bởi: Benjur Emmanuel L. Borja and Maria Eloisa M. Ventura</p>
@@ -1038,32 +1038,7 @@ Wall time: 1.9 s
 </div>
 </section>
 </section>
-<section id="xem-truoc-chuong-tiep-theo">
-<h2 id="xem-truoc-chuong-tiep-theo-10">Xem trước chương tiếp theo</h2>
-<p>Mô hình ARIMA chỉ là một trong số nhiều thuật toán mà chúng ta sẽ thảo luận. Chúng ta có thể thấy những hạn chế cố hữu của ARIMA. Cụ thể, chúng ta đang không xem xét đến:</p>
-<ol class="arabic simple">
-<li><p>Xu hướng và tính thời vụ</p></li>
-<li><p>Sự phụ thuộc tầm xa</p></li>
-<li><p>Chuỗi thời gian đa biến</p></li>
-</ol>
-<p>Những yếu tố này thường phổ biến hơn và sẽ quan trọng trong nhiều ứng dụng. Ví dụ, xu hướng rất quan trọng trong phân tích kỹ thuật của giao dịch chứng khoán. Điều này có thể được giải quyết bằng cách sử dụng Dự báo Động lượng (Momentum Forecasting), thứ sẽ được thảo luận trong Chương 2 cùng với các phương pháp khác.</p>
-<p>Trong Chương 3, chúng ta sẽ xem lại ví dụ về Chất lượng Không khí và sử dụng phương pháp tiếp cận đa biến. Chúng ta sẽ giới thiệu các phương pháp tự hồi quy vectơ (VAR) — một họ mô hình biểu diễn mỗi biến dưới dạng hàm tuyến tính của các độ trễ trong quá khứ của chính nó và độ trễ trong quá khứ của các biến khác — và cho thấy rằng chúng ta có thể cải thiện các dự báo bằng cách mở rộng điều này thành một bài toán chuỗi thời gian đa biến.</p>
-</section>
-<section id="tai-lieu-tham-khao">
-<h2 id="tai-lieu-tham-khao-11">Tài liệu tham khảo</h2>
-<p>Nội dung của sổ tay này được biên soạn từ các nguồn sau:</p>
-<ul class="simple">
-<li><p>https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/</p></li>
-<li><p>https://otexts.com/fpp2/arima.html</p></li>
-<li><p>https://people.duke.edu/~rnau/411arim.htm</p></li>
-<li><p>https://www.analyticsvidhya.com/blog/2018/02/time-series-forecasting-methods/</p></li>
-<li><p>https://machinelearningmastery.com/time-series-forecast-study-python-monthly-sales-french-champagne/</p></li>
-<li><p>https://medium.com/@josemarcialportilla/using-python-and-auto-arima-to-forecast-seasonal-time-series-90877adff03c</p></li>
-<li><p>https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average</p></li>
-<li><p>C.Monterola, <em>“Notebook 10 Time Series Forecasting Method — ARIMA MSDS2021”</em></p></li>
-<li><p>Hyndman, R. J., &amp; Khandakar, Y. (2008). Automatic time series forecasting: The forecast package for R. Journal of Statistical Software, 27(1), 1–22. https://doi.org/10.18637/jss.v027.i03</p></li>
-</ul>
-</section>
+
 </section>
     </article>
     

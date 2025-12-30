@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tài liệu Tinh gọn</title>
+    <title>Buổi 1: Trung bình trượt tích hợp tự hồi quy (ARIMA)</title>
     <style>
 
     :root { --primary: #f59e0b; --text: #451a03; }
@@ -39,6 +39,18 @@
       margin: 0 !important;
       box-shadow: none !important;
     }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 2rem 0;
+      background: #fff;
+      border: 3px solid #fef3c7;
+      border-radius: 25px;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: #fffbeb; color: #92400e; padding: 1.25rem; }
+    td { padding: 1.25rem; border-bottom: 1px solid #fffbeb; text-align: center; }
 
     pre { background: #2d3748; color: #fff; padding: 25px; border-radius: 20px; }
     .toc { background: #fffbeb; border: 3px solid #f59e0b; padding: 2rem; border-radius: 25px; }
@@ -79,9 +91,11 @@
     <nav class="toc">
         <div class="toc-title">Mục lục</div>
         <ul>
-            <li class="toc-level-1"><a href="#chuong-1-trung-binh-truot-tich-hop-tu-hoi-quy-arim-0">Buổi 1: Trung bình trượt tích hợp tự hồi quy (ARIMA)</a></li><li class="toc-level-2"><a href="#gioi-thieu-ve-arima-1">Giới thiệu về ARIMA</a></li><li class="toc-level-3"><a href="#vi-du-1-chuoi-thoi-gian-don-bien-dung-va-khong-dun-2">Ví dụ 1: Chuỗi thời gian đơn biến dừng và không dừng</a></li><li class="toc-level-3"><a href="#thanh-phan-mo-hinh-3">Thành phần mô hình</a></li><li class="toc-level-2"><a href="#cac-tham-so-mo-hinh-p-d-and-q-va-cac-truong-hop-da-4">Các tham số mô hình p, d, and q và các trường hợp đặc biệt</a></li><li class="toc-level-3"><a href="#xac-dinh-p-d-va-q-5">Xác định p, d, và q</a></li><li class="toc-level-2"><a href="#xay-dung-mo-hinh-arima-6">Xây dựng mô hình ARIMA</a></li><li class="toc-level-2"><a href="#trien-khai-va-du-bao-bang-arima-7">Triển khai và Dự báo bằng ARIMA</a></li><li class="toc-level-3"><a href="#vi-du-2-du-bao-nhiet-do-trong-bo-du-lieu-khi-hau-j-8">Ví dụ 2: Dự báo nhiệt độ trong Bộ dữ liệu Khí hậu Jena</a></li><li class="toc-level-3"><a href="#vi-du-3-su-dung-arima-cho-chuoi-thoi-gian-da-bien--9">Ví dụ 3: Sử dụng ARIMA cho chuỗi thời gian đa biến (Multivariate Time Series)</a></li>   
+            <li class="toc-level-1"><a href="#chuong-1-trung-binh-truot-tich-hop-tu-hoi-quy-arim-0">Buổi 1: Trung bình trượt tích hợp tự hồi quy (ARIMA)</a></li><li class="toc-level-2"><a href="#gioi-thieu-ve-arima-1">Giới thiệu về ARIMA</a></li><li class="toc-level-3"><a href="#vi-du-1-chuoi-thoi-gian-don-bien-dung-va-khong-dun-2">Ví dụ 1: Chuỗi thời gian đơn biến dừng và không dừng</a></li><li class="toc-level-3"><a href="#thanh-phan-mo-hinh-3">Thành phần mô hình</a></li><li class="toc-level-2"><a href="#cac-tham-so-mo-hinh-p-d-and-q-va-cac-truong-hop-da-4">Các tham số mô hình p, d, and q và các trường hợp đặc biệt</a></li><li class="toc-level-3"><a href="#xac-dinh-p-d-va-q-5">Xác định p, d, và q</a></li><li class="toc-level-2"><a href="#xay-dung-mo-hinh-arima-6">Xây dựng mô hình ARIMA</a></li><li class="toc-level-2"><a href="#trien-khai-va-du-bao-bang-arima-7">Triển khai và Dự báo bằng ARIMA</a></li><li class="toc-level-3"><a href="#vi-du-2-du-bao-nhiet-do-trong-bo-du-lieu-khi-hau-j-8">Ví dụ 2: Dự báo nhiệt độ trong Bộ dữ liệu Khí hậu Jena</a></li><li class="toc-level-3"><a href="#vi-du-3-su-dung-arima-cho-chuoi-thoi-gian-da-bien--9">Ví dụ 3: Sử dụng ARIMA cho chuỗi thời gian đa biến (Multivariate Time Series)</a></li>
         </ul>
     </nav>
+
+    
 <p>Biên soạn bởi: Benjur Emmanuel L. Borja and Maria Eloisa M. Ventura</p>
 <p>Trong sổ tay này, chúng ta sẽ giới thiệu phương pháp tiếp cận đầu tiên đối với dự báo chuỗi thời gian, đó là <strong>ARIMA</strong>hay Trung bình trượt tích hợp tự hồi quy. Notebook này sẽ thảo luận về:</p>
 <ol class="arabic simple">
@@ -847,7 +861,7 @@ Wall time: 49.3 s
         text-align: right;
     }
 </style>
-<table class="dataframe">
+<div class="table-container"><table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -894,7 +908,7 @@ Wall time: 49.3 s
       <td>70.275000</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 </div></div></div>
 </div>
 <div class="cell docutils container">
